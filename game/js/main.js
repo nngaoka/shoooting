@@ -17,8 +17,8 @@ function tryShoot() {
     bullets.push({
         x: player.x,
         y: player.y,
-        width: 10,
-        height: 10,
+        width: 15,
+        height: 15,
         vy: BULLET_SPEED,
     })
 }
