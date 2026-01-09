@@ -19,8 +19,16 @@ function tryShoot() {
         y: player.y,
         width: 15,
         height: 15,
+        vx: -1,
         vy: BULLET_SPEED,
-    })
+    },
+    {
+        y: player.y,
+        width: 15,
+        height: 15,
+        vx: -1,
+        vy: BULLET_SPEED,});
+
 }
 function updateScore(){
      const scoreBoard = document.getElementById("scoreBoard");
@@ -33,10 +41,20 @@ function updateScore(){
         if (player.x > 10) {
             player.x -= 10;
         }
-    } else if (e.key === "ArrowRight") {
-        if (player.x < canvas.width - player.width - 10) {
+       } else if (e.key === "ArrowRight") {
+        if (player.x < canvas.width - player.width + 10) {
             player.x += 10;
         }
+            } else if (e.key === "ArrowUp") {
+        if (player.y > 10) {
+            player.y -= 10;
+        }
+            } else if (e.key === "ArrowDown") {
+        if (player.y < canvas.height - player.height - 10) {
+            player.y += 10;
+        }
+        
+    
     } else if (e.code === "Space") {
         tryShoot();
     }
